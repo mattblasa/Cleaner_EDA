@@ -25,4 +25,14 @@ def PCA(args, kwargs, **kwargs):
     PCA Chart
     '''
 
-def 
+def PCA_dataframe(args, kwargs):
+    '''
+    '''
+
+def multicol(args, kwargs):
+    '''
+    Parameters 
+
+    Returns 
+    This method returns a chart that checks multicolinearity when called. 
+    '''
