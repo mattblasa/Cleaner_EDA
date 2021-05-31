@@ -5,9 +5,34 @@ import matplotlib.pyplot as plt
 
 
 
+#############Cleaning Methods#####################
+
+def zero_to_NaN(df, column): #This is only a single column. Will add multiple columns in future update
+    '''
+    Parameters 
+    df- takes in dataframe 
+    column - 
+
+    Returns 
+    Returns correlation heatmap 
+
+    '''
+    if df.loc[df[column] == 0.0]:
+        df.loc[df[column] == 0.0] = np.nan
+    else:
+        pass 
+    return df 
+
 
 
 ########## Graphing Methods ######################
+def no_kwargs_plot(x, y, ax=None):
+    if ax is None:
+        ax = plt.gca()
+    ax.plot(x, y) ## example plot here
+    return(ax)plt.figure(figsize=(10, 5))
+
+
 def correlation_graph(df):
     '''
     Parameters 
@@ -39,6 +64,11 @@ def pairplot(df, features):
         print('Check parameters if correct. Features must be in an array format for function to run.')
 
 ############Exploratory Data Analysis###########################################
+
+def norm_feat(series): #feature normalization
+    return (series - series.mean())/series.std()
+
+
 
 def PCA(args, kwargs, **kwargs):
     '''
